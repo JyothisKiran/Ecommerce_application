@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/c08a1bc374.js" crossorigin="anonymous"></script>
+    <title>Sign-up</title>
+
+    <style>
+
+
+        .box{
+          background-color:rgba(0,0,0,0.25);
+          width:550px;
+          text-align:center;
+          width:350px;
+          margin:auto;
+          transform:translate(0%,30%);
+        }
+
+    </style>
+    
+  </head>
+  <body>
+    
+    {% block contents %}
+    <div class="boxall" style="transform:translate(0%,30%);">
+      
+    <div class="box" style="color:white;  background-image: linear-gradient(to top left, rgba(8, 203, 252,0.4), rgba(232, 70, 235,0.4));
+    width:550px;
+    text-align:center;
+    width:350px;
+    margin:auto;
+    "><br>
+    <h1 style="color:white;text-align:center;">Register</h1><br><br>
+      <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Register">
+      </form>
+      <p>
+        Already have an account?
+        <a href="{% url 'login' %} " style="text-decoration:none; color:lightgray;">Login</a>
+      </p>
+      <hr>
+      <div class="fb">
+        <a href=""><button><i class="fa-brands fa-square-facebook"></i>     Login with Facebook</button></a>
+      </div>
+      <div class="google">
+        <a href=""><button><i class="fa-brands fa-google"></i>     Login with Google</button></a>
+      </div>
+    
+    </div>
+    </div>
+    {% endblock contents %}
+  </body>
+</html>

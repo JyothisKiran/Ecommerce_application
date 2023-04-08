@@ -1,0 +1,86 @@
+{% extends 'basic.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail view</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+body{
+    background: rgb(204, 242, 242);
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+  </style>
+</head>
+{% block content %}
+<body>
+
+   {% comment %} <div class="row">
+    <div class="col-md-10">
+      <div class="card mb3" >
+        <div class="row">
+          <div class="col-md-4">
+            <h5 class="card-title">{{ object.name }}</h5>
+            <img src="{{ object.image_url }}" class="card-img">
+            <h5 class="card-title">{{ object.description }}</h5>
+            {% if object.shoe_available is True %}
+            <a href="{% url 'addcart' object.id %}" class="btn btn-outline-success" role="button">Add to Cart</a>
+            
+                <a href="{% url 'checkout-view' object.id %}" class="btn btn-outline-success" role="button">Buy Now</a>
+                {% else %}
+                <li class="text-danger">Out Of Stock</li>
+            {% endif %}
+          </div>
+           <div class="col-md-8">
+            <img src="{{ object.image_url }}" class="card-img">
+           </div>
+        </div>
+          
+        </div>
+    </div>
+   </div> {% endcomment %}
+         
+<div class="container-fluid" style="background:rgba(255,255,255,0.25);">
+  <div class="row">
+    <div class="col-4">
+    
+      <img src="{{ object.image_url }}" class="card-img">
+
+   
+    </div>
+
+    <div class="col-1" style="background:rgba(255,255,255,0.25);"></div>
+
+    <div class="col-6" style="background:rgba(255,255,255,0.25);">
+      <h3 class="card-title">{{ object.name }}</h3> <br>
+      <h5 class="card-title"> Brand : {{ object.brand }}</h5><br>
+      <h5 class="card-title">Rating : {{ object.star }}</h5><br>
+      <div class="w-100"></div>
+      
+      <h2 class="card-title">Rs.{{ object.price }}</h2><br><br>
+
+      <h5 class="card-title"> Description : {{ object.description }}</h5><br><br>
+
+      {% if object.shoe_available is True %}
+      <a href="{% url 'addcart' object.id %}" class="btn btn-outline-success" role="button">Add to Cart</a>
+      
+          <a href="{% url 'checkout-view' object.id %}" class="btn btn-outline-success" role="button">Buy Now</a>
+          {% else %}
+          <li class="text-danger">Out Of Stock</li>
+      {% endif %}
+
+    </div>
+
+    <div class="col-1" style="background:rgba(255,255,255,0.25);"></div>
+  </div>
+</div>
+
+
+{% endblock content %}
+</body>
+</html>

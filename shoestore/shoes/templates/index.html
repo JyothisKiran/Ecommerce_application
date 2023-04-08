@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      body{
+        background-image: url('https://r4.wallpaperflare.com/wallpaper/436/436/13/nike-air-force-hyperbeast-wallpaper-58c53f3d50269890f62ba3d56b8790db.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+      .navbar{
+        background-image: linear-gradient(to top left, rgba(8, 203, 252,0.4), rgba(232, 70, 235,0.4));
+      }
+
+      .navbar a{
+        color:white;
+      }
+
+      .navbar a :hover{
+        background-color:cyan;
+      }
+
+
+      .homecontents{
+        font-size:20px;
+        text-align:center;
+        display:flex;
+        height:663px;
+    
+      }
+
+      .homecontents h1{
+        color:white;
+      }
+
+      .homecontents a{
+        text-decoration:none;
+      }
+      
+      .insidebox_col{
+        border-radius:20px;
+      }
+
+      .insidebox_col{
+        transition: 1s ease;
+        }
+        
+      .insidebox_col:hover{
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        transition: 1s ease;
+        background-image: linear-gradient(to top left, rgba(8, 203, 252,0.7), rgba(232, 70, 235,0.7));
+      }
+    </style>
+    <title>Home</title>
+</head>
+<body >
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      <div class="all">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">SHOEZZ</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="{% url 'register' %}">Register</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+              </ul>
+                 {% comment %} <form class="search" action="{% url 'search' %}" method="get">
+                 <input name="q" class="fas fa search" type="text" placeholder="Search" aria-label="Search" autocomplete="on">
+                     <button class="btn btn-outline-success" type="submit" >Search</button>
+                 </form> {% endcomment %}
+            </div>
+          </div>
+            </nav>
+        
+        {% block contents %}
+        <section>
+          <br><br><br>
+          <div class="moto container-fluid" style="color:lightblue; margin:auto;">
+            <h1 style="font-size:60px;">"Good Shoes Take You Good Places :)"</h1>
+          </div>
+        </section>
+        
+        <section>
+          
+        <div class="homecontents">
+
+          <div class="registerbox col-6" style=''>
+           <div class="insidebox_col " style='width:450px;height:450px;margin:auto; margin-top:10%;background-image: linear-gradient(to left, rgba(255,255,255,0.2), rgba(255,255,255,0.4));'>
+            <br><br><br>
+            <h1>REGISTER</h1>
+            <br><br>
+            <div>
+              <p style="color:white;">Signup and Become a Part of the Shoezz Community, 
+                and be up-to date with the latest trends!! </p>
+                <button class="btn btn-light"><a href="{% url 'register' %}">REGISTER</a></button>
+            </div>
+           </div>
+            </div>
+            <div class="loginbox col-6">
+              <div class="insidebox_col " style='width:450px;height:450px;margin:auto; margin-top:10%; background-image: linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,0.4))'>
+                <br><br><br>
+                <h1>LOGIN</h1>
+                <br><br>
+                <div>
+                  <p style="color:white;">Login to View Products and Start shopping on Shoezz !!</p>
+                    <button class="btn btn-light"><a href="{% url 'login' %}">LOGIN</a></button>
+                </div>
+               </div>
+
+              
+          </div>
+         </div>
+        </section>
+
+        
+
+        {% endblock contents %}
+      
+        </body>
+</html>
